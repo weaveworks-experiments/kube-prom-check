@@ -1,0 +1,33 @@
+name: kube-prom-check
+version: 0.1.0.0
+synopsis:
+description: See README.md for details
+maintainer: Jonathan M. Lange <jml@mumak.net>
+license: Apache
+github: jml/kube-prom-check
+category: Development
+
+ghc-options: -Wall -Werror
+default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
+
+dependencies:
+  - base >= 4.9 && < 5
+  - protolude >= 0.1.5
+
+executables:
+  kube-prom-check:
+    main: Main.hs
+    source-dirs: cmd
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
+    dependencies:
+      - aeson
+      - containers
+      - directory
+      - filepath
+      - optparse-applicative
+      - process-extras
+      - regex-compat
+      - text
+      - yaml
